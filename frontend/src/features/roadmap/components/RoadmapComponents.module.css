@@ -116,6 +116,7 @@
   border-radius: 8px;
   overflow: hidden;
   width: fit-content;
+  flex-wrap: wrap;
 }
 .recStatItem {
   background: #fff;
@@ -153,7 +154,7 @@
   align-items: center;
 
   min-width: 0;
-  gap: 10px; 
+  gap: 10px;
 }
 .widgetTitle {
   font-size: 1rem;
@@ -397,6 +398,75 @@
 @media (max-width: 600px) {
   .kanbanContainer {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .recCard {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .recCard::before {
+    width: 100%;
+    height: 4px;
+    left: 0;
+    top: 0;
+    bottom: auto;
+  }
+
+  .recCoverWrapper {
+    width: 100px;
+    height: 140px;
+    margin-bottom: 10px;
+  }
+
+  .recInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .recGameTitle {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+
+  .recStats {
+    width: 100%;
+    justify-content: center;
+    border-radius: 8px;
+  }
+
+  .recStatItem {
+    flex: 1;
+    min-width: auto;
+    padding: 10px 5px;
+  }
+}
+
+@media (max-width: 600px) {
+  .headerTop {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .roadmapTitle {
+    font-size: 2rem;
+  }
+
+  .headerBadges {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .statBox {
+    flex: 1; 
   }
 }
 .columnHovered {

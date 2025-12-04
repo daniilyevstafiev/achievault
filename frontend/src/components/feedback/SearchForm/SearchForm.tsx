@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./SearchForm.module.css";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
+import { toast } from "react-hot-toast";
 
 type SearchVariant = "header" | "hero";
 
@@ -10,13 +11,18 @@ interface Props {
 }
 
 export const SearchForm = ({ variant }: Props) => {
+  const { t } = useTranslation();
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!query.trim()) return;
+    const cleanQuery = query.trim();
+    if (cleanQuery.length < 3) {
+      toast.error(t("search.min_length_error"));
+      return;
+    }
     navigate(`/search?q=${query}`);
   };
 
