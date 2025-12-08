@@ -32,6 +32,7 @@ const resources = {
         no_games: "No games found",
         query_label: "Results for",
         rating: "Rating",
+        min_length_error: "Please enter at least 3 characters",
       },
       ranking: {
         title: "Global Ranking",
@@ -302,6 +303,7 @@ const resources = {
         no_games: "Ігор не знайдено",
         query_label: "Результати для",
         rating: "Рейтинг",
+        min_length_error: "Введіть щонайменше 3 символи",
       },
       ranking: {
         title: "Глобальний рейтинг",

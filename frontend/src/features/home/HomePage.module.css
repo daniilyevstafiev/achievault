@@ -62,7 +62,7 @@
 
 .widgetsGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 30px;
 
   width: 100%;
@@ -82,14 +82,14 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  .widgetWrapper:nth-child(3) {
+  .widgetWrapper:last-child:nth-child(odd) {
     grid-column: span 2;
   }
 }
 
 @media (max-width: 768px) {
   .heroSection {
-    padding: 60px 20px;
+    padding: 40px 20px;
   }
 
   .mainTitle {
@@ -98,11 +98,10 @@
 
   .widgetsGrid {
     grid-template-columns: 1fr;
-    gap: 20px;
   }
 
-  .widgetWrapper:nth-child(3) {
-    grid-column: span 1;
+  .widgetWrapper:last-child:nth-child(odd) {
+    grid-column: auto;
   }
 
   .widgetWrapper {

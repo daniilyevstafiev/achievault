@@ -92,6 +92,7 @@ export class RoadmapService {
     if (existing) {
       throw new BadRequestException('You already have a roadmap created.');
     }
+
     const stats = await this.gameService.getRoadmapStats(dto.gameIds);
 
     const gamesMetricsRaw =
