@@ -11,24 +11,16 @@ export abstract class BaseApiService {
   }
 
   protected async _makePostRequest(url: string, data: any, headers: any) {
-    try {
-      const response = await firstValueFrom(
-        this.httpService.post(url, data, { headers }),
-      );
-      return response.data;
-    } catch (error) {
-      throw error;
-    }
+    const response = await firstValueFrom(
+      this.httpService.post(url, data, { headers }),
+    );
+    return response.data;
   }
 
   protected async _makeGetRequest(url: string, params: any) {
-    try {
-      const response = await firstValueFrom(
-        this.httpService.get(url, { params }),
-      );
-      return response.data;
-    } catch (error) {
-      throw error;
-    }
+    const response = await firstValueFrom(
+      this.httpService.get(url, { params }),
+    );
+    return response.data;
   }
 }

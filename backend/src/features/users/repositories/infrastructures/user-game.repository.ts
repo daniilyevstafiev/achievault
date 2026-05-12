@@ -117,7 +117,7 @@ export class TypeOrmUserGameRepository
 
     this.addTotalAchievementsSelect(qb);
     this.addUnlockedCountSelect(qb);
-    this.addLockedAchievementsSelect(qb, userId);
+    this.addLockedAchievementsSelect(qb);
 
     const rawData = await qb.getRawMany<RecommendationRawResult>();
 
@@ -229,10 +229,7 @@ export class TypeOrmUserGameRepository
     );
   }
 
-  private addLockedAchievementsSelect(
-    qb: SelectQueryBuilder<UserGame>,
-    userId: number,
-  ) {
+  private addLockedAchievementsSelect(qb: SelectQueryBuilder<UserGame>) {
     qb.addSelect(
       (sub) =>
         sub
