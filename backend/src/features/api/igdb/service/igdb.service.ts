@@ -33,7 +33,7 @@ export class IgdbService extends BaseApiService {
     const url = `${this.igdbConfig.apiUrl}/${endpoint}`;
     try {
       return await this._makePostRequest(url, queryBody, this.commonHeaders);
-    } catch (error) {
+    } catch {
       return undefined;
     }
   }

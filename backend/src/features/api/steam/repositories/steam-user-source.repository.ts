@@ -30,10 +30,8 @@ export class SteamUserSourceRepository
         return { game_count: 0, games: [] };
       }
       return response;
-    } catch (error) {
-      this.logger.error(
-        `Failed to fetch owned games for ${steamId}: ${error.message}`,
-      );
+    } catch {
+      this.logger.error(`Failed to fetch owned games for ${steamId}: ${Error}`);
       return { game_count: 0, games: [] };
     }
   }
@@ -51,9 +49,9 @@ export class SteamUserSourceRepository
       if (!response || !response.achievements) return [];
 
       return response.achievements;
-    } catch (error) {
+    } catch {
       this.logger.warn(
-        `Failed to fetch achievements for app ${appId}: ${error.message}`,
+        `Failed to fetch achievements for app ${appId}: ${Error}`,
       );
       return [];
     }
@@ -63,10 +61,8 @@ export class SteamUserSourceRepository
     try {
       const friends = await this.steamApi.getFriendList(steamId);
       return friends || [];
-    } catch (error) {
-      this.logger.warn(
-        `Failed to fetch friends for ${steamId}: ${error.message}`,
-      );
+    } catch {
+      this.logger.warn(`Failed to fetch friends for ${steamId}: ${Error}`);
       return [];
     }
   }
@@ -74,8 +70,8 @@ export class SteamUserSourceRepository
   async getTopGames(limit: number): Promise<any[]> {
     try {
       return await this.steamApi.getTopPlayedGames(limit);
-    } catch (error) {
-      this.logger.error(`Failed to fetch top played games: ${error.message}`);
+    } catch {
+      this.logger.error(`Failed to fetch top played games: ${Error}`);
       return [];
     }
   }
@@ -83,7 +79,8 @@ export class SteamUserSourceRepository
   async getGameSchema(appId: string): Promise<any[]> {
     try {
       return await this.steamApi.getGameSchema(appId);
-    } catch (error) {
+    } catch {
+      this.logger.error(`Failed to fetch game schema for ${appId}: ${Error}`);
       return [];
     }
   }
@@ -91,10 +88,8 @@ export class SteamUserSourceRepository
   async searchGames(query: string): Promise<any[]> {
     try {
       return await this.steamApi.searchGames(query);
-    } catch (error) {
-      this.logger.error(
-        `Failed to search games for "${query}": ${error.message}`,
-      );
+    } catch {
+      this.logger.error(`Failed to search games for "${query}": ${Error}`);
       return [];
     }
   }
@@ -102,7 +97,7 @@ export class SteamUserSourceRepository
   async getAchievementPercentages(appId: string): Promise<any> {
     try {
       return await this.steamApi.getGlobalAchievementPercentages(appId);
-    } catch (error) {
+    } catch {
       return [];
     }
   }
@@ -111,9 +106,9 @@ export class SteamUserSourceRepository
     try {
       const recent = await this.steamApi.getRecentlyPlayedGames(steamId, limit);
       return recent || [];
-    } catch (error) {
+    } catch {
       this.logger.error(
-        `Failed to fetch recent games for ${steamId}: ${error.message}`,
+        `Failed to fetch recent games for ${steamId}: ${Error}`,
       );
       return [];
     }

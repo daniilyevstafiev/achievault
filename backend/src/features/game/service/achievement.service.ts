@@ -3,14 +3,6 @@ import { EntityManager } from 'typeorm';
 import { ISteamPlayerAchievement } from 'src/core/interfaces/games/player-achievement.interface';
 import { AchievementRepository } from '../repositories/abstracts/achievement.repository.abstract';
 
-interface IAchievementsDto {
-  apiname: any;
-  displayName: any;
-  global_percent: number;
-  achieved: number;
-  unlocktime: number;
-}
-
 @Injectable()
 export class AchievementService {
   constructor(

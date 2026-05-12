@@ -230,7 +230,7 @@ export class RoadmapService {
       const percent =
         totalAch > 0 ? Math.round((unlockedAch / totalAch) * 100) : 0;
 
-      let etc: number | null = game.time_to_beat;
+      const etc: number | null = game.time_to_beat;
 
       return {
         id: game.id,

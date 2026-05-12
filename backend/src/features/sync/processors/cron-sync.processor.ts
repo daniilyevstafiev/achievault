@@ -1,9 +1,4 @@
-import {
-  OnQueueActive,
-  OnQueueDrained,
-  Process,
-  Processor,
-} from '@nestjs/bull';
+import { OnQueueDrained, Process, Processor } from '@nestjs/bull';
 import type { Job } from 'bull';
 import { Logger } from '@nestjs/common';
 import { SyncService } from '../services/sync.service';

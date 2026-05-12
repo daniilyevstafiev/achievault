@@ -3,7 +3,6 @@ import {
   Get,
   ParseIntPipe,
   Query,
-  Req,
   UsePipes,
   ValidationPipe,
   Param,
@@ -15,7 +14,7 @@ import { GetLeaderboardDto } from '../dto/get-leaderboard.dto';
 export class LeaderboardController {
   constructor(private leaderboardService: LeaderboardService) {}
   @Get()
-  async refreshRanks(@Req() req) {
+  async refreshRanks() {
     this.leaderboardService.updateLeaderboard();
     return { message: 'Game synchronization has been started.' };
   }
