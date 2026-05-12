@@ -1,16 +1,12 @@
 {
-  "name": "AchieVault",
+  "name": "achievault",
   "private": true,
   "version": "1.0.0",
   "scripts": {
     "prepare": "husky"
   },
   "devDependencies": {
-    "husky": "^9.1.7",
-    "lint-staged": "^17.0.4"
-  },
-  "lint-staged": {
-    "backend/**/*.ts": "pnpm --dir backend exec eslint --fix",
-    "frontend/**/*.{ts,tsx,js,jsx}": "pnpm --dir frontend exec eslint --fix"
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2"
   }
 }
