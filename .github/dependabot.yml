@@ -1,0 +1,44 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/backend"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    assignees:
+      - "DaniilYevstafiev"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    labels:
+      - "backend"
+      - "dependencies"
+
+  - package-ecosystem: "npm"
+    directory: "/frontend"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    assignees:
+      - "DaniilYevstafiev"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    labels:
+      - "frontend"
+      - "dependencies"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    assignees:
+      - "DaniilYevstafiev"
+    commit-message:
+      prefix: "chore(ci)"
+    labels:
+      - "infrastructure"
