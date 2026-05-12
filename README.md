@@ -1,6 +1,12 @@
-# Coursework: AchieVault – Game Achievement Tracker
+# AchieVault – Interactive Game Backlog & Achievement Planner
 
-A modern web application for dedicated gamers to track, manage, and plan their video game achievement hunting. This project is being developed as a 3rd-year coursework for a Software Engineering program.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
+
+A web application for gamers to track achievements, manage their backlog, and actively plan a "roadmap" to 100% completion.
 
 ---
 
@@ -70,15 +76,20 @@ This project is built using a **monorepo** approach, housing the backend and fro
 - PostgreSQL
 - Redis
 
+### Environment Variables
+
+Before running the application, you need to set up your environment variables. 
+1. Navigate to the `backend` directory.
+2. Create a `.env` file.
+3. Fill in your credentials for PostgreSQL, Redis, Steam Web API, IGDB API, and JWT secrets.
+
 ## Installation & Running
 
 1. Backend:
-
    ```bash
    cd backend
    pnpm install
    nest start
-
    ```
 
 2. Frontend:
@@ -87,6 +98,12 @@ This project is built using a **monorepo** approach, housing the backend and fro
    pnpm install
    pnpm run dev
    ```
+
+---
+
+## About the Project
+
+This project was originally conceived and developed as a 3rd-year coursework for a Software Engineering program, with the goal of solving the real-world problem of fragmented achievement tracking through a full-stack architectural approach.
 
 ## License
 
