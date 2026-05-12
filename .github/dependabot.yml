@@ -42,3 +42,17 @@ updates:
       prefix: "chore(ci)"
     labels:
       - "infrastructure"
+
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    assignees:
+      - "DaniilYevstafiev"
+    commit-message:
+      prefix: "chore(root)"
+    labels:
+      - "infrastructure"
+      - "dependencies"
